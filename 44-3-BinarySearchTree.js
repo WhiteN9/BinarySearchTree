@@ -39,6 +39,29 @@ class BinarySearchTree {
     }
   }
 
+  find(key) {
+    // If the key is found at the root, the return that value.
+    if (this.key == key) {
+      //   console.log(this);
+      return this.value; // return null if we did not set any value, we can console.log(this) to print out the node
+    } else if (key < this.key && this.left) {
+      /* If the item that you are looking for is less than the root, then follow the left child.
+    If there is an existing left child,
+    then recursively check its left and/or right child until you find the item. 
+    */
+      return this.left.find(key);
+    } else if (key > this.key && this.right) {
+      /* If the item that you are looking for is more than the root, then the follow right child.
+    If there is an existing right child,
+    then recursively check its left and/or right child until you find the item.
+    */
+      return this.right.find(key);
+    }
+    // You have searched the tree and the item isn't in the tree
+    else {
+      throw new Error("Key Not Found");
+    }
+  }
 }
 
 module.exports = BinarySearchTree;

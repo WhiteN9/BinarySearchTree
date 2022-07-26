@@ -10,5 +10,7 @@ bst.insert(28);
 bst.insert(18);
 
 // console.log(bst.right);
-  
-console.log(bst.right.left.right);
+
+// console.log(bst.right.left.right);
+
+console.log(bst.find(18));
